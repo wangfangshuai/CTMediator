@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A1E9CD824D987E300913C1C /* CTMediator+HandyTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E9CD624D987E300913C1C /* CTMediator+HandyTools.m */; };
 		4A5CE4FF1C9531C9006AEDB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5CE4FE1C9531C9006AEDB9 /* main.m */; };
 		4A5CE5021C9531C9006AEDB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5CE5011C9531C9006AEDB9 /* AppDelegate.m */; };
 		4A5CE5051C9531C9006AEDB9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5CE5041C9531C9006AEDB9 /* ViewController.m */; };
@@ -18,7 +19,6 @@
 		4A5CE52B1C9547B2006AEDB9 /* Target_A.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5CE52A1C9547B2006AEDB9 /* Target_A.m */; };
 		4A85F5541DA92AFC00DB882C /* CTMediator+CTMediatorModuleAActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F5531DA92AFC00DB882C /* CTMediator+CTMediatorModuleAActions.m */; };
 		4AC176591DE163B600566741 /* CTMediatorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC176581DE163B600566741 /* CTMediatorUITests.m */; };
-		4AD2E20524174B1900F8B53A /* CTMediator+HandyTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2E20424174B1900F8B53A /* CTMediator+HandyTools.m */; };
 		4AED66AE1DB895D900C13EDC /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AED66AD1DB895D900C13EDC /* TableViewController.m */; };
 		6A1C7FA419878A7AFA10DB7C /* libPods-CTMediator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDD4389F5AEA1D8F6AA0C9F /* libPods-CTMediator.a */; };
 /* End PBXBuildFile section */
@@ -36,6 +36,8 @@
 /* Begin PBXFileReference section */
 		1CDD4389F5AEA1D8F6AA0C9F /* libPods-CTMediator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CTMediator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D583B83854D11618B8F5E65 /* Pods-CTMediator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTMediator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CTMediator/Pods-CTMediator.debug.xcconfig"; sourceTree = "<group>"; };
+		4A1E9CD624D987E300913C1C /* CTMediator+HandyTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+HandyTools.m"; sourceTree = "<group>"; };
+		4A1E9CD724D987E300913C1C /* CTMediator+HandyTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTMediator+HandyTools.h"; sourceTree = "<group>"; };
 		4A5CE4FA1C9531C9006AEDB9 /* CTMediator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTMediator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5CE4FE1C9531C9006AEDB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4A5CE5001C9531C9006AEDB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,8 +59,6 @@
 		4AC176561DE163B600566741 /* CTMediatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CTMediatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC176581DE163B600566741 /* CTMediatorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTMediatorUITests.m; sourceTree = "<group>"; };
 		4AC1765A1DE163B600566741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4AD2E20324174B1900F8B53A /* CTMediator+HandyTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+HandyTools.h"; sourceTree = "<group>"; };
-		4AD2E20424174B1900F8B53A /* CTMediator+HandyTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+HandyTools.m"; sourceTree = "<group>"; };
 		4AED66AC1DB895D900C13EDC /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		4AED66AD1DB895D900C13EDC /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		E9C114EF1101F17773DD4798 /* Pods-CTMediator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTMediator.release.xcconfig"; path = "Pods/Target Support Files/Pods-CTMediator/Pods-CTMediator.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A1E9CD524D987E300913C1C /* HandyTools */ = {
+			isa = PBXGroup;
+			children = (
+				4A1E9CD724D987E300913C1C /* CTMediator+HandyTools.h */,
+				4A1E9CD624D987E300913C1C /* CTMediator+HandyTools.m */,
+			);
+			path = HandyTools;
+			sourceTree = "<group>";
+		};
 		4A5CE4F11C9531C9006AEDB9 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +115,7 @@
 		4A5CE4FC1C9531C9006AEDB9 /* CTMediator */ = {
 			isa = PBXGroup;
 			children = (
+				4A1E9CD524D987E300913C1C /* HandyTools */,
 				4AED66AB1DB895C600C13EDC /* TableViewController */,
 				4A85F5501DA92AFC00DB882C /* Categories(实际应用中，这是一个单独的repo，所用需要调度其他模块的人，只需要依赖这个repo。这个repo由target-action维护者维护) */,
 				4A5CE5141C9531E9006AEDB9 /* CTMediator（这也是单独的repo，完整的中间件就这100行代码） */,
@@ -136,8 +146,6 @@
 			children = (
 				4A5CE5181C95322F006AEDB9 /* CTMediator.h */,
 				4A5CE5191C95322F006AEDB9 /* CTMediator.m */,
-				4AD2E20324174B1900F8B53A /* CTMediator+HandyTools.h */,
-				4AD2E20424174B1900F8B53A /* CTMediator+HandyTools.m */,
 			);
 			name = "CTMediator（这也是单独的repo，完整的中间件就这100行代码）";
 			path = CTMediator;
@@ -364,7 +372,7 @@
 				4A5CE4FF1C9531C9006AEDB9 /* main.m in Sources */,
 				4A5CE5251C953D7D006AEDB9 /* DemoModuleADetailViewController.m in Sources */,
 				4A5CE51A1C95322F006AEDB9 /* CTMediator.m in Sources */,
-				4AD2E20524174B1900F8B53A /* CTMediator+HandyTools.m in Sources */,
+				4A1E9CD824D987E300913C1C /* CTMediator+HandyTools.m in Sources */,
 				4A5CE52B1C9547B2006AEDB9 /* Target_A.m in Sources */,
 				4AED66AE1DB895D900C13EDC /* TableViewController.m in Sources */,
 			);
