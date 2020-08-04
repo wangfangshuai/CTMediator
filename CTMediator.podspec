@@ -137,7 +137,6 @@ Pod::Spec.new do |s|
   
   s.subspec "HandyTools" do |ss|
     ss.source_files  = "CTMediator/HandyTools/**/*.{h,m}"
-    ss.dependency "CTMediator"
   end
 
 
