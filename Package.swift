@@ -13,6 +13,8 @@ let package = Package(
   dependencies: [
   ],
   targets: [
-    .target(name: "CTMediator"),
+    .target(name: "CTMediator",
+            path: ".",
+            publicHeadersPath: ""),
   ]
 )
