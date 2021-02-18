@@ -14,7 +14,6 @@ let package = Package(
   ],
   targets: [
     .target(name: "CTMediator",
-            path: "CTMediator",
-            publicHeadersPath: ""),
+            path: "CTMediator"),
   ]
 )
