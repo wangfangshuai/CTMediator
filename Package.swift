@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
   name: "CTMediator",
   platforms: [
-    .iOS(.v8), .tvOS(.v9),
+    .iOS(.v9), .tvOS(.v9),
   ],
   products: [
     .library(name: "CTMediator", targets: ["CTMediator"]),
@@ -17,3 +17,4 @@ let package = Package(
             path: "CTMediator"),
   ]
 )
+ 
