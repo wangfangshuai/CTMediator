@@ -40,19 +40,21 @@ NSString * const kCTMediatorParamsKeySwiftTargetModuleName = @"kCTMediatorParams
  aaa://targetA/actionB?id=1234
  */
 
-- (id)performActionWithUrl:(NSURL *)url completion:(void (^)(NSDictionary *))completion
+- (id)performActionWithUrl:(NSURL *)url params:(NSDictionary *)params completion:(void (^)(NSDictionary *))completion
 {
     if (url == nil) {
         return nil;
     }
     
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *params1 = [[NSMutableDictionary alloc] init];
     NSString *urlString = [url query];
     for (NSString *param in [urlString componentsSeparatedByString:@"&"]) {
         NSArray *elts = [param componentsSeparatedByString:@"="];
         if([elts count] < 2) continue;
-        [params setObject:[elts lastObject] forKey:[elts firstObject]];
+        [params1 setObject:[elts lastObject] forKey:[elts firstObject]];
     }
+    
+    [params1 addEntriesFromDictionary:params];
     
     // 这里这么写主要是出于安全考虑，防止黑客通过远程方式调用本地模块。这里的做法足以应对绝大多数场景，如果要求更加严苛，也可以做更加复杂的安全逻辑。
     NSString *actionName = [url.path stringByReplacingOccurrencesOfString:@"/" withString:@""];
@@ -61,7 +63,7 @@ NSString * const kCTMediatorParamsKeySwiftTargetModuleName = @"kCTMediatorParams
     }
     
     // 这个demo针对URL的路由处理非常简单，就只是取对应的target名字和method名字，但这已经足以应对绝大部份需求。如果需要拓展，可以在这个方法调用之前加入完整的路由逻辑
-    id result = [self performTarget:url.host action:actionName params:params shouldCacheTarget:NO];
+    id result = [self performTarget:url.host action:actionName params:params1 shouldCacheTarget:NO];
     if (completion) {
         if (result) {
             completion(@{@"result":result});
@@ -251,45 +253,16 @@ NSString * const kCTMediatorParamsKeySwiftTargetModuleName = @"kCTMediatorParams
     return topController;
 }
 
-//- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-//{
-//    UINavigationController *navigationController = (UINavigationController *)[self topViewController];
-//
-//    if ([navigationController isKindOfClass:[UINavigationController class]] == NO) {
-//        if ([navigationController isKindOfClass:[UITabBarController class]]) {
-//            UITabBarController *tabbarController = (UITabBarController *)navigationController;
-//            navigationController = tabbarController.selectedViewController;
-//            if ([navigationController isKindOfClass:[UINavigationController class]] == NO) {
-//                navigationController = tabbarController.selectedViewController.navigationController;
-//            }
-//        } else {
-//            navigationController = navigationController.navigationController;
-//        }
-//    }
-//
-//    if ([navigationController isKindOfClass:[UINavigationController class]]) {
-//        [navigationController pushViewController:viewController animated:animated];
-//    }
-//}
-//
-//- (void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)animated completion:(void (^ _Nullable)(void))completion
-//{
-//    UIViewController *viewController = [self topViewController];
-//    if ([viewController isKindOfClass:[UINavigationController class]]) {
-//        UINavigationController *navigationController = (UINavigationController *)viewController;
-//        viewController = navigationController.topViewController;
-//    }
-//    
-//    if ([viewController isKindOfClass:[UIAlertController class]]) {
-//        UIViewController *viewControllerToUse = viewController.presentingViewController;
-//        [viewController dismissViewControllerAnimated:false completion:nil];
-//        viewController = viewControllerToUse;
-//    }
-//    
-//    if (viewController) {
-//        [viewController presentViewController:viewControllerToPresent animated:animated completion:completion];
-//    }
-//}
+- (NSString *)urlencodeString:(NSString *)string {
+    NSString *encodedString = (NSString *)
+    CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                              (CFStringRef)string,
+                                                              NULL,
+                                                              (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                              kCFStringEncodingUTF8));
+    
+    return encodedString;
+}
 
 @end
 
